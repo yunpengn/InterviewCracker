@@ -10,8 +10,9 @@ public class Examples {
 
     public static void main(String[] args) {
         Examples example = new Examples();
-        example.permutation("12345");
-        System.out.println(count);
+        example.permutation("1234");
+        System.out.println(String.format("The method has been evaluated for %1$d times.", count));
+        System.out.println(example.allFibonacciBetter(5));
     }
 
     /**
@@ -134,12 +135,76 @@ public class Examples {
     private void permutation(String str, String prefix) {
         count++;
         if (str.length() == 0) {
-            System.out.println(prefix);
         } else {
             for(int i = 0; i < str.length(); i++) {
                 String remove = str.substring(0, i) + str.substring(i + 1);
                 permutation(remove, prefix + str.charAt(i));
             }
+        }
+    }
+
+    /**
+     * Example 13: O(2^n) time
+     */
+    int fibonacci(int n) {
+        if (n <= 1) {
+            return n;
+        } else {
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+    }
+
+    /**
+     * Example 14: O(2^n) time
+     */
+    int allFibonacci(int n) {
+        if (n == 0) {
+            return 0;
+        } else {
+            return fibonacci(n) + allFibonacci(n - 1);
+        }
+    }
+
+    /**
+     * Example 15: O(n) time
+     */
+    int allFibonacciBetter(int n) {
+        // Notice: Java will automatically initialize all elements of an integer array to zeros.
+        int[] memo = new int[n + 1];
+        int result = 0;
+
+        for (int i = 0; i <= n; i++) {
+            result += betterFibonacci(i, memo);
+        }
+
+        return result;
+    }
+
+    private int betterFibonacci(int n, int[] memo) {
+        if (n <= 1) {
+            return n;
+        } else if (memo[n] > 0) {
+            return memo[n];
+        }
+
+        memo[n] = betterFibonacci(n - 1, memo) + betterFibonacci(n - 2, memo);
+        return memo[n];
+    }
+
+    /**
+     * Example 15: O(log(n)) time
+     */
+    int powersOfTwo(int n) {
+        if (n < 1) {
+            return 0;
+        } else if (n == 1) {
+            System.out.println(1);
+            return 1;
+        } else {
+            int previous = powersOfTwo(n / 2);
+            int current = previous * 2;
+            System.out.println(current);
+            return current;
         }
     }
 }
