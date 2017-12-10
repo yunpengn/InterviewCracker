@@ -7,10 +7,10 @@ This repository is currently maintained by [Yunpeng Niu](https://yunpengn.github
 
 ## Useful links
 
-- [Cracking the Coding Interview (6th edition)](http://www.amazon.com/Cracking-Coding-Interview-6th-Edition/dp/0984782850)
-on Amazon
 - The book author's personal [website](http://www.gayle.com/)
-- Official [repository](https://github.com/careercup/CtCI-6th-Edition) for solution to the book
+- Official [repository](https://github.com/careercup/CtCI-6th-Edition) for solution to the [Cracking the Coding Interview (6th edition)](http://www.amazon.com/Cracking-Coding-Interview-6th-Edition/dp/0984782850)
+- Tay Yang Shun's [repository](https://github.com/yangshun/tech-interview-handbook) about technical interview handbook
+- Kevin Naughton Jr's personal [guide](https://github.com/kdn251/interviews) about technical interview
 
 ## To contribute
 
