@@ -6,13 +6,12 @@ package BigO;
  * @author yunpengn
  */
 public class Examples {
-    public static void main(String[] args) {
-        int[] arr = new int[3];
-        arr[0] = 0;
-        arr[1] = 1;
-        arr[2] = 2;
+    private static int count = 0;
 
-        new Examples().foo(arr);
+    public static void main(String[] args) {
+        Examples example = new Examples();
+        example.permutation("12345");
+        System.out.println(count);
     }
 
     /**
@@ -41,6 +40,105 @@ public class Examples {
         for (int i : arr) {
             for (int j : arr) {
                 System.out.println(i + ", " + j);
+            }
+        }
+    }
+
+    /**
+     * Example 3: O(n^2) time
+     */
+    void printUnorderedPairs(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                System.out.println(i + ", " + j);
+            }
+        }
+    }
+
+    /**
+     * Example 4: O(m * n) time
+     */
+    void printUnorderedDoublePairs(int[] arrA, int[] arrB) {
+        for (int i = 0; i < arrA.length; i++) {
+            for (int j = 0; j < arrB.length; j++) {
+                System.out.println(i + ", " + j);
+            }
+        }
+    }
+
+    /**
+     * Example 5: O(m * n) time
+     */
+    void printUnorderedDoublePairsManyTimes(int[] arrA, int[] arrB) {
+        for (int i = 0; i < arrA.length; i++) {
+            for (int j = 0; j < arrB.length; j++) {
+                for (int k = 0; k < 1000; k++) {
+                    System.out.println(i + ", " + j + " for the " + k + "th times.");
+                }
+            }
+        }
+    }
+
+    /**
+     * Example 6: O(n) time
+     */
+    void reverse(int[] arr) {
+        for (int i = 0; i < arr.length / 2; i++) {
+            int other = arr.length - i - 1;
+            int temp = arr[i];
+            arr[i] = arr[other];
+            arr[other] = temp;
+        }
+    }
+
+    /**
+     * Example 9: O(n) time if n is the number of nodes in the BST.
+     */
+    int sum(Node node) {
+        return node == null ? 0 : sum(node.left) + sum(node.right);
+    }
+
+    /**
+     * Example 10: O(sqrt(n)) time
+     */
+    boolean isPrime(int n) {
+        for (int x = 2; x * x <= n; x++) {
+            if (n % x == 0 ) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Example 11: O(n) time
+     */
+    int factorial(int n) {
+        if (n < 0) {
+            return -1;
+        } else if (n == 0) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
+    }
+
+    /**
+     * Example 12: O(n^2 * n!) time
+     */
+    void permutation(String str) {
+        permutation(str, "");
+    }
+
+    private void permutation(String str, String prefix) {
+        count++;
+        if (str.length() == 0) {
+            System.out.println(prefix);
+        } else {
+            for(int i = 0; i < str.length(); i++) {
+                String remove = str.substring(0, i) + str.substring(i + 1);
+                permutation(remove, prefix + str.charAt(i));
             }
         }
     }
