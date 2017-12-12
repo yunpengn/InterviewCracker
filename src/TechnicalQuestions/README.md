@@ -55,3 +55,16 @@ Interview questions may be supposed to be difficult. You are suggested to follow
 - Build from base cases;
 - Data structure brainstorm;
 - Consider the best conceivable runtime (BCR).
+
+_To learn more about these techniques, see more examples at [here](Examples.md)._
+
+## Miscellaneous
+
+- To handle incorrect answers: calm down and do not panic.
+- If you have seen the questions before: better to admit that.
+- To choose the programming language: choose wisely (suggest to use _Java_).
+    - Does the interview know it?
+    - Will the language make the code verbose?
+        - In this case, Java may not be as a good choice as Python.
+    - Does the language have built-in support for some data structures you will use?
+- To write beautiful code: correct, efficient, simple, readable, maintainable, flexible, robust.
