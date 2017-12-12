@@ -32,3 +32,15 @@ constant in this case. Thus, time and space complexity are both O(1).
 3. If all characters are UniCode, the above method is still theoretically feasible but will consume much space.
 4. Alternatively, we could sort all characters in the string and check whether any neighbors are the same. Time complexity
 is O(n * log n).
+
+
+#### 1.2 Check Permutation
+
+This question is actually quite similar to 1.1, in which the way to solve. Below are a few methods.
+
+1. Sort two arrays (need to convert them to two arrays of characters first) and check whether they are the same. Time 
+complexity is O(n * log n).
+2. For string `A`, build a hash map to store the number of times each character occurs. That means, the key of the hash 
+map is the character, the value is an integer. For string `B`, iterate through each character, check the value in the 
+hash map, if it does not exist or equal to 0, return false; otherwise, decrease that integer by 1 and continue. After 
+finishing the iteration, return true. Time complexity is O(n).
