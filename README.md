@@ -1,6 +1,6 @@
 # Interview Cracker
 
-This repository contains some useful information to a technical interview. It is inspired by the infamous book 
+This repository contains some useful information to a technical interview. It is inspired by the well-known book 
 [Cracking the Coding Interview (6th edition)](http://www.amazon.com/Cracking-Coding-Interview-6th-Edition/dp/0984782850) 
 written by [Gayle Laakmann McDowell](http://www.gayle.com/).
 
