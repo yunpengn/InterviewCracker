@@ -1,10 +1,14 @@
 # Interview Cracker
 
-This repository contains some useful information to a technical interview. It is inspired by the well-known book 
-[Cracking the Coding Interview (6th edition)](http://www.amazon.com/Cracking-Coding-Interview-6th-Edition/dp/0984782850) 
-written by [Gayle Laakmann McDowell](http://www.gayle.com/).
+This repository contains some useful information to a technical interview. It is inspired by the well-known book [Cracking the Coding Interview (6th edition)](http://www.amazon.com/Cracking-Coding-Interview-6th-Edition/dp/0984782850) written by [Gayle Laakmann McDowell](http://www.gayle.com/).
 
 This repository is currently maintained by [Yunpeng Niu](https://yunpengn.github.io/).
+
+## Table of Contents
+
+- [Big O Notation](src/BigO/)
+- [Chapter 1: Arrays and Strings](src/Chap01/README.md)
+- [Chapter 14: Databases](src/Chap14/README.md)
 
 ## Useful links
 
