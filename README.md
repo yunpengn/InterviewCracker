@@ -9,6 +9,8 @@ This repository is currently maintained by [Yunpeng Niu](https://yunpengn.github
 - [Big O Notation](src/BigO/)
 - [Chapter 1: Arrays and Strings](src/Chap01/README.md)
 - [Chapter 2: Linked Lists](src/Chap02/README.md)
+- [Chapter 3: Stacks and Queues](src/Chap03/README.md)
+- [Chapter 4: Trees and Graphs](src/Chap04/README.md)
 - [Chapter 14: Databases](src/Chap14/README.md)
 
 ## Useful links
