@@ -61,3 +61,14 @@ We use a recursive solution. The all possible BST sequences for a tree is: put t
 
 1. Iterative: construct a special version of pre-order traversal for both trees, with using a special placeholder value for each `NULL` value met during the traversal (to fix the problems raised by duplicates).
 2. Recursive: traverse `tree1` and whenver meeting a node with its value equal to that of the root of `tree2`, check whether the sub-tree at that point is identical to `tree2`.
+
+#### 4.11 Random Node
+
+We need to use an augmented tree. At each node, we maintain an additional information about the size of the sub-tree rooted at that node. Thus, we know the size of the whole tree, let's say `n`. Then, we do a `randomInt(0, n - 1)` and return the tree node with this index.
+
+#### 4.12 Paths with Sum
+
+1. If the paths have to start from root, we can just use a recursion and keep track of the sum along the way.
+2. If paths do not necessaily start from root, we can repeat the above algorithm for every node. But this is brute-force, we need to optimize it.
+3. In fact, overlapping sub-problems have occurred and we can optimize this using DP. At each node, we can record the sum of the path from root to that node. Then, at each node, we look back to all of its ancestors.
+4. We have successfully turned this problem into the classical sub-array sum problem. To further optimize this, we have a hash map that maps from the sum of the path from root to a certain node to that node. As we go back and traverses up, we need to delete those entries in the hash map that are not applicable anymore.
