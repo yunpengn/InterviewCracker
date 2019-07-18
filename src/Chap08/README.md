@@ -43,3 +43,26 @@ We represent the input as a hashtable from character to the number of occurrence
 Use a recursive solution. `Parens(a, b) = Parens(a - 1, b) + Parens(a, b - 1)`, where `a` and `b` represent the number of open & close brackets respectively.
 
 #### 8.10 Paint Fill
+
+To be honest, this problem is not clear at all. Most candidates may not be sure what it means at all. But it turns out that it should be either an DFS or BFS on the given 2D array.
+
+#### 8.11 Coins
+
+Coins(n) = Coins(n - 5) + Coins(n - 10) + Coins(n - 25)
+
+#### 8.12 Eight Queens
+
+Use recursion. Consider the queens one by one.
+
+#### 8.13 Stack of Boxes
+
+Boxes(Integer.MaxValue, Integer.MaxValue) = Math.Max(
+	Boxes(w1, d1) + h1,
+	Boxes(w2, d2) + h2,
+	...,
+	Boxes(wn, dn) + hn,
+)
+
+#### 8.14 Boolean Evaluation
+
+We just need to find a place to split the whole expression into two parts and then apply `AND` or `OR` to them. `XOR` could be applied to either operand. Certainly, we could use short-circuit evaluation for optimization.
