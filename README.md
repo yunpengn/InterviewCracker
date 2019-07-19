@@ -14,6 +14,7 @@ This repository is currently maintained by [Yunpeng Niu](https://yunpengn.github
 - [Chapter 5: Bit Manipulation](src/Chap05/README.md)
 - [Chapter 8: Recursion and Dynamic Programming](src/Chap08/README.md)
 - [Chapter 9: System Design and Scalability](src/Chap09/README.md)
+- [Chapter 10: Sorting and Searching](src/Chap10/README.md)
 - [Chapter 14: Databases](src/Chap14/README.md)
 
 ## Useful links

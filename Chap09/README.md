@@ -35,6 +35,12 @@ Use a ultra-scale distributed cache with LRU retention policy。
 
 The sales rank should be from an OLAP database, which should be decoupled from the OLTP database. The OLAP db can get new purchases notificatinos from OLTP db via a message queue. The first n items for each category must be cached and shall be updated periodically via a background worker.
 
-#### 9.7 
+#### 9.7 Personal Financial Manager
+
+We probably should use things like webhook or message queue. Whenever there is a new transaction, banks shall notice us by sending a payload to the webhook or create a new message in the MQ. Whenever receiving a new message, analytics will happen and store the result in database.
+
+#### 9.8 Pastebin
+
+The actual content could be very large. Thus, it is not a wise idea to store them in database. Instead, we shall probably store it as a text file and use a CDN in the frontend (basically, we need S3 + CloudFront). To generate random URLs, we can just use UUID.
 
 
