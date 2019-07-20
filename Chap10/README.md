@@ -31,4 +31,23 @@ Use external sort.
 
 #### 10.7 Missing Int
 
+- 1GB of memory means 8 billion bits. Thus, we can use half of it to construct a bit vector to store all possible 4 billion items.
+- If only 10MB of memory is available: use a two-pass approach. Separate into different ranges and count how many items there are in each range.
 
+#### 10.8 Find Duplicates
+
+4KB means 32,000 bits. Thus, we can use a bit vector.
+
+#### 10.9 Sorted Matrix Search
+
+- Perform binary search on each row or column, time complexity of min(O(m * logn), O(logm * n)).
+- Think about the whole matrix of an array of size M * N, time complexity of O(log(m * n)).
+- Compare the target with the center of the whole matric. In this way, we can eliminate either 1 or 3 quarters. Recursively perform this.
+
+#### 10.10 Rank from Stream
+
+Use an augmented BST. Each node stores the size of the sub-tree rooted at that node.
+
+#### 10.11 Peaks and Valleys
+
+Put elements into groups of 3 and swap.
