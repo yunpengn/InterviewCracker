@@ -6,7 +6,7 @@
 
 ## Exercises
 
-- 14.0 Schooling
+#### 14.0 Schooling
 
 ```sql
 SELECT DISTINCT s.StudentID, s.StudentName, (
@@ -35,10 +35,46 @@ FROM Teachers t
 ORDER BY num DESC;
 ```
 
-- 14.1 Multiple Apartments
+#### 14.1 Multiple Apartments
 
 ```sql
 SELECT m1.TenantID
 FROM AptTenants m1, AptTenants m2
 WHERE m1.TenantID = m2.TenantID AND m1.AptID <> m2.AptID;
 ```
+
+#### 14.2 Open Requests
+
+```sql
+SELECT *
+FROM Apartments a, Buildings b, Requests r
+WHERE a.BuildingID = b.BuildingID AND a.AptID = r.AptID and r.Status = 'Open';
+```
+
+#### 14.3 Close All Requests
+
+```sql
+UPDATE Requests r
+SET r.Status = 'Closed'
+WHERE r.AptID IN (
+	SELECT a.AptID
+	FROM Apartments a
+	WHERE a.BuildingID = 11
+);
+```
+
+#### 14.4 Joins
+
+Inner join, natural join, left/right/full outer join, anti-join, semi-join.
+
+#### 14.5 Denormalization
+
+Flatten data structure.
+
+#### 14.6 Entity-Relationship Diagram
+
+Companies and people are associated by professionals.
+
+#### 14.7 Design Grade Database
+
+Students, Courses, Enrollments.
