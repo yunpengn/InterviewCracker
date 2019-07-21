@@ -17,6 +17,7 @@ This repository is currently maintained by [Yunpeng Niu](https://yunpengn.github
 - [Chapter 10: Sorting and Searching](src/Chap10/README.md)
 - [Chapter 13: Java](src/Chap13/README.md)
 - [Chapter 14: Databases](src/Chap14/README.md)
+- [Chapter 15: Threads and Locks](src/Chap15/README.md)
 
 ## Useful links
 
