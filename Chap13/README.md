@@ -24,4 +24,18 @@ Java generics relies on `type erasure`, thus, it is only a syntax sugar. C++ tem
 
 #### 13.5 TreeMap, HashMap, LinkedHashMap
 
+- `HashMap`: the most basic key-value mapping, with O(1) insertion and lookup speed, do not preserve order;
+- `TreeMap`: use red-black tree, with O(logn) insertion and lookup speed, preserve order;
+- `LinkedHashMap`: O(1) insertion and lookup speed, preserve order by insertion order, can use to implement LRU cache.
 
+#### 13.6 Object Reflection
+
+Reflection can be used to dynamically get meta-information about classes and objects at runtime.
+
+#### 13.7 Lambda Expressions
+
+Use `filter`, `map` and `reduce`.
+
+#### 13.8 Lambda Random
+
+Iterate through each element, use a 50% probability to decide whether to include it in the result.
