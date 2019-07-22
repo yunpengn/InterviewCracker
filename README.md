@@ -23,6 +23,8 @@ This repository is currently maintained by [Yunpeng Niu](https://yunpengn.github
 - [Chapter 13: Java](Chap13/README.md)
 - [Chapter 14: Databases](Chap14/README.md)
 - [Chapter 15: Threads and Locks](Chap15/README.md)
+- [Chapter 16: Moderate](Chap16/README.md)
+- [Chapter 17: Hard](Chap17/README.md)
 - [Post Interview](PostInterview/README.md)
 
 ## Useful links
