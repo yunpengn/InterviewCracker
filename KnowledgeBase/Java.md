@@ -66,3 +66,6 @@ In this guide, we introduce some knowledge about Java.
         - When exceeding the current capacity, the `HashMap` will be resize with a factor of 2. This is calculated by `oldCap << 1`.
     - `Hashtable` has an initial size of 11 and a default load factor of 0.75
         - When exceeding the current capacity, the `Hashtable` will be resize with a factor of about 2. This is calculated by `(oldCap << 1) + 1`.
+    - `ConcurrentHashMap` uses segments to have better concurrency support. Theoretically, the number of concurrent access allowed is equal to the number of segments.
+        - By default, `ConcurrentHashMap` creates 16 segments.
+        - Starting from Java 8, `ConcurrentHashMap` is re-designed. It uses an array of `LinkedList`s (or red-black trees when there are too many items in a bucket). Effectively, it is the same as `HashMap`. It uses CAS to add lock when necessary.
