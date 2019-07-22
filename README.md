@@ -4,6 +4,10 @@ This repository contains some useful information to a technical interview. It is
 
 This repository is currently maintained by [Yunpeng Niu](https://yunpengn.github.io/).
 
+## Knowledge Base
+
+- [Java](KnowledgeBase/Java.md)
+
 ## Coding Interview Questions
 
 - [Overview](TechnicalQuestions/README.md)
