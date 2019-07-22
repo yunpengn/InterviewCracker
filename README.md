@@ -4,20 +4,22 @@ This repository contains some useful information to a technical interview. It is
 
 This repository is currently maintained by [Yunpeng Niu](https://yunpengn.github.io/).
 
-## Table of Contents
+## Coding Interview Questions
 
-- [Big O Notation](src/BigO/)
-- [Chapter 1: Arrays and Strings](src/Chap01/README.md)
-- [Chapter 2: Linked Lists](src/Chap02/README.md)
-- [Chapter 3: Stacks and Queues](src/Chap03/README.md)
-- [Chapter 4: Trees and Graphs](src/Chap04/README.md)
-- [Chapter 5: Bit Manipulation](src/Chap05/README.md)
-- [Chapter 8: Recursion and Dynamic Programming](src/Chap08/README.md)
-- [Chapter 9: System Design and Scalability](src/Chap09/README.md)
-- [Chapter 10: Sorting and Searching](src/Chap10/README.md)
-- [Chapter 13: Java](src/Chap13/README.md)
-- [Chapter 14: Databases](src/Chap14/README.md)
-- [Chapter 15: Threads and Locks](src/Chap15/README.md)
+- [Overview](TechnicalQuestions/README.md)
+- [Chapter 0: Big O Notation](BigO/README.md)
+- [Chapter 1: Arrays and Strings](Chap01/README.md)
+- [Chapter 2: Linked Lists](Chap02/README.md)
+- [Chapter 3: Stacks and Queues](Chap03/README.md)
+- [Chapter 4: Trees and Graphs](Chap04/README.md)
+- [Chapter 5: Bit Manipulation](Chap05/README.md)
+- [Chapter 8: Recursion and Dynamic Programming](Chap08/README.md)
+- [Chapter 9: System Design and Scalability](Chap09/README.md)
+- [Chapter 10: Sorting and Searching](Chap10/README.md)
+- [Chapter 13: Java](Chap13/README.md)
+- [Chapter 14: Databases](Chap14/README.md)
+- [Chapter 15: Threads and Locks](Chap15/README.md)
+- [Post Interview](PostInterview/README.md)
 
 ## Useful links
 
