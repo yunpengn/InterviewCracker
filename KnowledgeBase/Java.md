@@ -33,7 +33,6 @@ In this guide, we introduce some knowledge about Java.
     - `equals` is used to compare equality, and will fall back to `==` if it is not overridden in the class
     - `hashCode` is used to compute hash value of an object, and will be used in collection framework such as `HashMap`
     - If `equals` return `true`, `hashCode` must return the same value; but not vice versa
-- Difference betwen co-routine, thread and process
 - Difference between `Throwable`, `Error`, `Exception`, `RuntimeException` and `assert`:
     - `Throwable` is the most generic class from `java.lang` package
     - `Error` inherits from `Throwable` and represents serious errors that are usually not recoverable. You can but should NOT catch `Error`s
@@ -69,3 +68,20 @@ In this guide, we introduce some knowledge about Java.
     - `ConcurrentHashMap` uses segments to have better concurrency support. Theoretically, the number of concurrent access allowed is equal to the number of segments.
         - By default, `ConcurrentHashMap` creates 16 segments.
         - Starting from Java 8, `ConcurrentHashMap` is re-designed. It uses an array of `LinkedList`s (or red-black trees when there are too many items in a bucket). Effectively, it is the same as `HashMap`. It uses CAS to add lock when necessary.
+
+## Concurrency
+
+- Difference betwen co-routine, thread and process:
+    - Java supports multi-process and multi-thread only
+- Difference between `Runnable` and `Thread`:
+    - Both are used to implement multi-thread in Java. Both need to override the `run` method.
+    - `Runnable` is an interface, while `Thread` is a class. `Thread` actually also implements the `Runnable` interface.
+    - Since Java does not support multi-inheritance, it may be better to use `Runnable` to support more features.
+    - Also, using `Runnable` can help to share resources (i.e., you can instantiate one `Runnable` object and use multiple `Thread` objects to start with it. Then, the fields inside that `Runnable` object will be shared).
+- Different use cases of `synchronized`:
+    - Lock for the whole class when using it on static methods.
+    - Lock for the single instance otherwise.
+
+## Spring
+
+- IoC (inverse of control), DI (dependency injection), AOP (aspect-oriented programming)
