@@ -33,4 +33,16 @@ Each trailing 0 means a factor of 10, which means a pair of 2 and 5. We can use 
 - Sort two arrays and do the merging process.
 - Store one of them into a hash table.
 
-#### 16.7
+#### 16.7 Number Max
+
+Use bit operation instead.
+
+#### 16.8 English Int
+
+Use a simple bit-wise iteration. Remember negative sign. Be careful.
+
+#### 16.9 Operations
+
+Use add to implement them. To implement `negate`, use a while loop with the value of the absolute value as the loop counter.
+
+#### 16.10
