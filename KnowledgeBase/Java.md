@@ -78,7 +78,8 @@ In this guide, we introduce some knowledge about Java.
 ## Concurrency
 
 - Difference betwen co-routine, thread and process:
-    - Java supports multi-process and multi-thread only
+    - Java supports multi-process and multi-thread only.
+    - Thread is a lighter concept compared to process. Threads from the same process share some common resources, so we could save some resources when doing context switches between threads.
 - Difference between `Runnable` and `Thread`:
     - Both are used to implement multi-thread in Java. Both need to override the `run` method.
     - `Runnable` is an interface, while `Thread` is a class. `Thread` actually also implements the `Runnable` interface.
@@ -91,3 +92,6 @@ In this guide, we introduce some knowledge about Java.
 ## Spring
 
 - IoC (inverse of control), DI (dependency injection), AOP (aspect-oriented programming)
+    - Spring AOP separates the business logic and system services (such as logging, auditing, transaction management). It in fact uses the delete pattern. In oher words, it attempts to use either `XML` configuration files or Java annotations to dynamically and implicitly insert the code for system services into the code for business logic.
+    - IoC is a useful design pattern. In Spring, all objects will be stored in IoC containers. These containers then adopt the factory pattern and provides the instantiation of objects when needed. Therefore, there is no need to manually create these objects.
+    - DI can be achieved via either constructor or setter.
