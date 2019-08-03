@@ -7,6 +7,9 @@ This repository is currently maintained by [Yunpeng Niu](https://yunpengn.github
 ## Knowledge Base
 
 - [Java](KnowledgeBase/Java.md)
+- [MySQL](KnowledgeBase/MySQL.md)
+- [Network](KnowledgeBase/Network.md)
+- [Redis](KnowledgeBase/Redis.md)
 
 ## Coding Interview Questions
 
