@@ -68,6 +68,12 @@ In this guide, we introduce some knowledge about Java.
     - `ConcurrentHashMap` uses segments to have better concurrency support. Theoretically, the number of concurrent access allowed is equal to the number of segments.
         - By default, `ConcurrentHashMap` creates 16 segments.
         - Starting from Java 8, `ConcurrentHashMap` is re-designed. It uses an array of `LinkedList`s (or red-black trees when there are too many items in a bucket). Effectively, it is the same as `HashMap`. It uses CAS to add lock when necessary.
+    - `LinkedHashMap` is similar to `HashMap`, but it preserves the insertion & access order of the elements inside. It is a subclass of `HashMap`, and is introduced in Java 4.
+        - However, similar to `HashMap`, `LinkedHashMap` is not thread-safe.
+        - Internally, `LinkedHashMap` maintains a double linked list. Whenever a new element is inserted or an old element is accessed, that node will be put to the head of the double linked list.
+        - `LinkedHashMap` is useful for implementing an LRU (least recently used) cache.
+    - `TreeMap` is also a key-pair collection. Although it supports ordering, its access time complexity is `O(logn)` rather than `O(1)`.
+        - Internally, a balanced red-black tree is maintained.
 
 ## Concurrency
 
