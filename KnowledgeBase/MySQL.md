@@ -21,4 +21,22 @@ In this guide, we introduce some knowledge about MySQL database engine. Some kno
 
 ## MySQL Concurrency, Transaction & Isolation Level
 
+- SQL supports 4 fundamental properties: ACID (atomicity, consistency, isolation, durability).
+- To ensure the atomicity and durability of a sequence of SQL statements, they have to be wrapped into an SQL transaction.
+	- However, code without transaction would in general lead to better concurrency performance. We can avoid the use of transaction by careful design (such as adopting MVVC, multi-version concurrency control).
+- According to ANSI SQL standard, there are 4 isolation levels:
+
 ![Isolation Levels](../img/sql_isolation.png)
+
+## MySQL High Performance & High Availability
+
+- To ensure the high performance of MySQL servers, there are a few aspects to consider:
+	- Separate read and write: use slaves as read replica;
+	- Use shard to partition the database;
+	- Avoid the use of lock and transaction.
+- To ensure the high availablity of MySQL servers, we have to:
+	- Set up a slave for every production MySQL server and the slave must be a different geographic location;
+	- Perform daily snapshot-based backup from the slave.
+- MVCC (multi-version concurrency control) is useful for applications with high concurrency.
+	- It is different from the traditional lock-based concurrency control.
+	- The most classical use case for MVCC is the bank transfer problem.

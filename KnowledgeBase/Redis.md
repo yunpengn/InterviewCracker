@@ -15,6 +15,14 @@ In this guide, we introduce some knowledge about Redis.
 - Starting from Redis 3.0, Redis natively supports cluster mode.
 - Redis is single-threaded, while Memcached is not.
 
+## Differences between Redis and etcd
+
+- Redis and etcd are both distributed key-value store.
+- However, Redis is an in-memory cache, while data in etcd can only be persisted in hard disk.
+	- Thus, etcd does not provide fast querying. etcd should not be used as the primary data store or cache.
+- As of 2019, the only correct usage of etcd is for configuration management and service discovery.
+	- etcd is originally designed to save configurations for Kubernetes.
+
 ## Redis Persistence - RDB vs AOF
 
 - RDB is a snapshot-based solution.
