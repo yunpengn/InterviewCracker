@@ -39,3 +39,21 @@ In this guide, we introduce some knowledge about Redis.
 ## Consistency between Redis and MySQL
 
 See https://yunpengn.github.io/blog/2019/05/04/consistent-redis-sql/.
+
+## Redis String Implementation
+
+Redis implements string in a way called [Simple Dynamic String](https://github.com/antirez/sds). It is defined using the following wrapper struct:
+
+```cpp
+struct sdshdr {
+    int len;
+    int free;
+    char buf[];
+}
+```
+
+This brings the following benefits over the native string representation in C:
+
+- Allow `O(1)` time complexity for the length of a given string. For native C, this needs `O(n)`.
+- Avoid buffer overflow for string. When appending new characters, SDS will dynamically allocate more spaces.
+- Minimize the number of memory allocation operations.
