@@ -76,3 +76,14 @@ _Below, let's say the entered URL is `https://drive.google.com/`._
 
 - By default, HTTP is on port 80, while HTTPS is on port 443.
 - Although HTTP and HTTPS both run on top of TCP, HTTPS is more secured with the help of TLS/SSL.
+
+## Differences between a few HTTP status code
+
+- Differences between 301, 302, 307 and 308:
+	- 301 stands for `Moved Permanently`. This means the old domain is not accessible anymore and search engine would replace to the new address from now on.
+	- 302 stands for `Found`, which means _moved temporarily_. This means this address wants to redirect to another address temporarily only. Search engine would get content from the new address but will still keep the old address.
+	- 307 stands for `Temporary Redirect`. It has the same semantics as 302, however, the user agent must NOT change the HTTP method used.
+	- 308 stands for `Permanent Redirect`. It has the same semantics as 301, however, the user agent must NOT change the HTTP method used.
+- Differences between 401 and 403:
+	- 401 stands for `Unauthorized`, although it actually means _not authenticated yet_. The client did not authenticate itself to show the identity to the server yet.
+	- 403 stands for `Forbidden`. Different from 401, the client does not have access rights to the requested resources even though its identity is already shown to the server.

@@ -9,6 +9,7 @@ This repository is currently maintained by [Yunpeng Niu](https://yunpengn.github
 - [Java](KnowledgeBase/Java.md)
 - [MySQL](KnowledgeBase/MySQL.md)
 - [Network](KnowledgeBase/Network.md)
+- [Operating System](KnowledgeBase/OS.md)
 - [Redis](KnowledgeBase/Redis.md)
 
 ## Coding Interview Questions
@@ -30,13 +31,13 @@ This repository is currently maintained by [Yunpeng Niu](https://yunpengn.github
 - [Chapter 17: Hard](Chap17/README.md)
 - [Post Interview](PostInterview/README.md)
 
-## Useful links
+## Useful Links
 
 - Official [repository](https://github.com/careercup/CtCI-6th-Edition) for solution to the [Cracking the Coding Interview (6th edition)](http://www.amazon.com/Cracking-Coding-Interview-6th-Edition/dp/0984782850)
 - Tay Yang Shun's [repository](https://github.com/yangshun/tech-interview-handbook) about technical interview handbook
 - Kevin Naughton Jr's personal [guide](https://github.com/kdn251/interviews) about technical interview
 
-## To contribute
+## To Contribute
 
 Everyone is welcome to contribute to this project by one of the following ways:
 - If you notice a bug in the existing code, report it in the [issue tracker](https://github.com/yunpengn/InterviewCracker/issues).
