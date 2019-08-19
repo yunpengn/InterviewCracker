@@ -17,7 +17,7 @@ In this guide, we introduce some knowledge about Java.
     - `StringBuilder` is not thread-safe, but is about 10% better in performance
 - Difference between abstract class and interface:
     - Interface only allows public methods, while methods in abstract class allow all different access modifiers
-        - Abstract methods in an abstract class cannot be private, though. Otherwise, subclasses cannot see and implement it
+        - Abstract methods in an abstract class cannot be `private`, though. Otherwise, subclasses cannot see and implement it
     - Methods in interface cannot have implementation, while non-abstract methods in abstract class can
         - Starting from Java 8, interface can declare a method as `default` and have implementation
     - Fields in interface must be `public static final`, while there is no restriction for fields in an abstract class
@@ -92,6 +92,6 @@ In this guide, we introduce some knowledge about Java.
 ## Spring
 
 - IoC (inverse of control), DI (dependency injection), AOP (aspect-oriented programming)
-    - Spring AOP separates the business logic and system services (such as logging, auditing, transaction management). It in fact uses the delete pattern. In oher words, it attempts to use either `XML` configuration files or Java annotations to dynamically and implicitly insert the code for system services into the code for business logic.
+    - Spring AOP separates the business logic and system services (such as logging, auditing, transaction management). It in fact uses the delegate pattern. In oher words, it attempts to use either `XML` configuration files or Java annotations to dynamically and implicitly insert the code for system services into the code for business logic.
     - IoC is a useful design pattern. In Spring, all objects will be stored in IoC containers. These containers then adopt the factory pattern and provides the instantiation of objects when needed. Therefore, there is no need to manually create these objects.
     - DI can be achieved via either constructor or setter.
