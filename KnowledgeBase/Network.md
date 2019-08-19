@@ -44,6 +44,7 @@ _Below, let's say the entered URL is `https://drive.google.com/`._
 	- Client to server: FIN = 1, seq = u
 	- Server to client: ACK = 1, seq = v, ack = u + 1
 	- Server to client: FIN = 1, ACK = 1, seq = w, ack = u + 1
+	- Client to server: ACK = 1, seq = u + 1, ack = w + 1
 
 ## Differences between TCP and UDP
 
