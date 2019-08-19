@@ -14,6 +14,7 @@ In this guide, we introduce some knowledge about Redis.
 - Redis supports data persistence using RDB or AOF.
 - Starting from Redis 3.0, Redis natively supports cluster mode.
 - Redis is single-threaded, while Memcached is not.
+- As of 2019, Redis should almost always be better than Memcached. The only possible reason for choosing Memcached is its simplicity.
 
 ## Differences between Redis and etcd
 
