@@ -36,6 +36,7 @@ This repository is currently maintained by [Yunpeng Niu](https://yunpengn.github
 - Official [repository](https://github.com/careercup/CtCI-6th-Edition) for solution to the [Cracking the Coding Interview (6th edition)](http://www.amazon.com/Cracking-Coding-Interview-6th-Edition/dp/0984782850)
 - Tay Yang Shun's [repository](https://github.com/yangshun/tech-interview-handbook) about technical interview handbook
 - Kevin Naughton Jr's personal [guide](https://github.com/kdn251/interviews) about technical interview
+- A [guide](https://snailclimb.top/JavaGuide/) about Java related knowledge (in Chinese only)
 
 ## To Contribute
 
