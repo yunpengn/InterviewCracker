@@ -28,10 +28,12 @@ In this guide, we introduce some knowledge about MySQL database engine. Some kno
 
 - SQL supports 4 fundamental properties: ACID (atomicity, consistency, isolation, durability).
 - To ensure the atomicity and durability of a sequence of SQL statements, they have to be wrapped into an SQL transaction.
-	- However, code without transaction would in general lead to better concurrency performance. We can avoid the use of transaction by careful design (such as adopting MVVC, multi-version concurrency control).
+	- However, code without transaction would in general lead to better concurrency performance. We can avoid the use of transaction by careful design.
 - According to ANSI SQL standard, there are 4 isolation levels:
 
 ![Isolation Levels](../img/sql_isolation.png)
+
+- In general, there are 2 ways to achieve isolation: lock-based concurrency control and multi-version concurrency control.
 
 ## MySQL High Performance & High Availability
 
