@@ -12,6 +12,11 @@ In this guide, we introduce some knowledge about MySQL database engine. Some kno
 - InnoDB uses clustered index, while MyISAM uses non-clustered index.
 - InnoDB does not store the number of rows in system catalog, while MyISAM does.
 	- Thus, if you run `SELECT COUNT(*) FROM my_tbl`, the query will be much faster on MyISAM.
+- InnoDB supports disaster recovery much better than MyISAM.
+- InnoDB requies every table to have a primary key. This is because InnoDB is an index-organized storage engine (i.e., it always uses clustered index). InnoDB indeed stores the actual data in the leaf nodes of a B+ tree index for the primary key.
+    - Thus, it is wise to keep the size of the primary key small.
+    - If not supplied, an implicit primary key (i.e., a counter of 6 bytes) will be created.
+    - Searches on secondary index will eventually result in a search on the primary key index.
 
 ## MySQL character set
 
