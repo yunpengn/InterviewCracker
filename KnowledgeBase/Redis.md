@@ -2,6 +2,18 @@
 
 In this guide, we introduce some knowledge about Redis.
 
+## What data types does Redis support?
+
+- According to [its official documentation](https://redis.io/topics/data-types-intro), Redis is a remote _data structures server_ that stores key-value pairs.
+- The keys in Redis are binary-safe strings (i.e., any binary sequence is eligible, like the content of a JPEG file). The maximum key size is 512MB.
+    - However, it is not recommended to use keys that are too long. If possible, you can consider use its hash value instead.
+- The values in Redis can be:
+    - String: similar to keys, cannot be larger than 512MB.
+    - List: implemented as linked list.
+    - Hash: a hash map from string to string, can store at most 2^32 entries.
+    - Set: a hash set of strings, can store at most 2^32 members.
+    - ZSet: a sorted set with the order defined by a floating-point number `score`, implemented by a skip list + hash set, can store at most 2^32 members.
+
 ## Why is Redis single-threaded?
 
 - For a memory-based cache such as Redis, CPU is usually not the bottleneck. Redis is usually memory or network bound.
