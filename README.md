@@ -6,6 +6,7 @@ This repository is currently maintained by [Yunpeng Niu](https://yunpengn.github
 
 ## Knowledge Base
 
+- [Go](KnowledgeBase/Go.md)
 - [Java](KnowledgeBase/Java.md)
 - [MySQL](KnowledgeBase/MySQL.md)
 - [Network](KnowledgeBase/Network.md)
