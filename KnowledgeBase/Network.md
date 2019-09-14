@@ -72,6 +72,7 @@ _Below, let's say the entered URL is `https://drive.google.com/`._
     - Different from web socket, long connection only eliminates the need for opening/closing TCP connection. The basic HTTP request/response model is still followed per communication.
 - WebSocket creates a persistent, full-duplex connection. This allows the server to push data to the client at any time.
     - WebSocket is not part of the HTTP standard. It is a different protocol.
+    - HTTP 2.0 also supports server push. However, this is a bit different from WebSocket as it does not expose APIs to developers.
 
 ## Differences between cookie, session and JWT token
 
