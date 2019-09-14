@@ -8,6 +8,7 @@ This repository is currently maintained by [Yunpeng Niu](https://yunpengn.github
 
 - [Go](KnowledgeBase/Go.md)
 - [Java](KnowledgeBase/Java.md)
+- [Kafka](KnowledgeBase/Kafka.md)
 - [MySQL](KnowledgeBase/MySQL.md)
 - [Network](KnowledgeBase/Network.md)
 - [Operating System](KnowledgeBase/OS.md)

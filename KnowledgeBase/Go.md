@@ -14,3 +14,9 @@ In this guide, we introduce some knowledge about Go.
     - `select` is like the channel-based version of `switch`. It can be used to wait on multiple channels.
         - `select` can be used together with `time.After` to implement a timeout functionality with a fallback function.
     - However, if you need to wait for the completion of all `n` channels, you probably want to use a `WaitGroup` (i.e., implemented via a mutex).
+
+## `defer` keyword
+
+- `defer` is a keyword in Go that can be used to execute something when the surrounding function returns.
+- It is useful to use `defer` to close resources such as opened files, channels, etc.
+- If there are multiple `defer` statements, they will be executed in the reverse order (i.e., first in last out) when the surrounding function returns.
