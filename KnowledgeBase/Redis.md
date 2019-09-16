@@ -70,3 +70,8 @@ This brings the following benefits over the native string representation in C:
 - Allow `O(1)` time complexity for the length of a given string. For native C, this needs `O(n)`.
 - Avoid buffer overflow for string. When appending new characters, SDS will dynamically allocate more spaces.
 - Minimize the number of memory allocation operations.
+
+## Differences between Redis Transaction and MySQL Transaction
+
+- Both are used to ensure the atomicity and isolation of a set of statements.
+- MySQL uses `UNDO/REDO` log to be always able to commit or rollback a given transaction. However, Redis is unable to rollback.
