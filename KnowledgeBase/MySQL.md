@@ -47,3 +47,8 @@ In this guide, we introduce some knowledge about MySQL database engine. Some kno
 - MVCC (multi-version concurrency control) is useful for applications with high concurrency.
 	- It is different from the traditional lock-based concurrency control.
 	- The most classical use case for MVCC is the bank transfer problem.
+
+## Differences between MySQL binlog and transaction log
+
+- The binlog is a linear history of writes to the database, which can be used for replication purpose. For example, a slave instance will read binlog to follow its master.
+- Transaction log is used for rollback and disaster recovery. It is also known as redo log in the old Oracle days.
