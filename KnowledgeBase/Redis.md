@@ -75,3 +75,8 @@ This brings the following benefits over the native string representation in C:
 
 - Both are used to ensure the atomicity and isolation of a set of statements.
 - MySQL uses `UNDO/REDO` log to be always able to commit or rollback a given transaction. However, Redis is unable to rollback.
+
+## Why does Redis Cluster need at least 3 master nodes?
+
+- Short answer: in the event of partial failure, you need at least 3 master nodes to agree on majority.
+- Long answer: Redis Cluster uses `PING/PONG` to detect failures. When node `A` sends `PING` to node `B` but did not receive the response of `PONG`, `A` will believe `B` has gone offline. When majority (more than half) of the master nodes believe a certain node is offline, that node will be removed from the cluster (and its slave will be promoted). If there are only 2 master nodes and the link between them breaks, they will both believe the other goes offline (and everything becomes a mess).
