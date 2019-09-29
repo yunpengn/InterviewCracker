@@ -45,4 +45,6 @@ Use a simple bit-wise iteration. Remember negative sign. Be careful.
 
 Use add to implement them. To implement `negate`, use a while loop with the value of the absolute value as the loop counter.
 
-#### 16.10
+#### 16.10 Living People
+
+

@@ -42,5 +42,3 @@ We probably should use things like webhook or message queue. Whenever there is a
 #### 9.8 Pastebin
 
 The actual content could be very large. Thus, it is not a wise idea to store them in database. Instead, we shall probably store it as a text file and use a CDN in the frontend (basically, we need S3 + CloudFront). To generate random URLs, we can just use UUID.
-
-
