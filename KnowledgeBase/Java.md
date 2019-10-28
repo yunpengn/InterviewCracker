@@ -56,7 +56,7 @@ In this guide, we introduce some knowledge about Java.
         - `ArrayList` grows at the rate of 1.5:
             - This is calculated by `oldCapacity + (oldCapacity >> 1)`. Java 7 uses bit operation to improve performance.
             - To copy old elements over to the new array, `Arrays.copyOf` is used.
-- Difference between `Hashtable`, `HashMap`, `ConcurrentHashMap`, `LinkedHashMap` and `TreeMap`:
+- Difference between `Hashtable`, `HashMap`, `ConcurrentHashMap`, `LinkedHashMap`, `TreeMap` and `IdentityHashMap`:
     - `Hashtable` and `ConcurrentHashMap` is thread-safe, but `HashMap` is not.
         - However, `ConcurrentHashMap` would provide better performance under high concurrency.
     - `HashMap` is implemented as an array of `LinkedList`s (because of hash conflict):
@@ -74,6 +74,7 @@ In this guide, we introduce some knowledge about Java.
         - `LinkedHashMap` is useful for implementing an LRU (least recently used) cache.
     - `TreeMap` is also a key-pair collection. Although it supports ordering, its access time complexity is `O(logn)` rather than `O(1)`.
         - Internally, a balanced red-black tree is maintained.
+    - `IdentityHashMap` uses reference-equality rather than object-equality when comparing keys. Its original use case is to store topology-preserving graph transformation, such as serialization or deep copying. However, it can actually be used as a `MultiHashMap`, in which we can store multiple entries with equal keys.
 
 ## Concurrency
 
