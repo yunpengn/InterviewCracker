@@ -39,7 +39,6 @@ This repository is currently maintained by [Yunpeng Niu](https://yunpengn.github
 - [Get that job at Facebook](https://www.facebook.com/notes/facebook-engineering/get-that-job-at-facebook/10150964382448920/)
 - [Get that job at Google](https://steve-yegge.blogspot.com/2008/03/get-that-job-at-google.html)
 - [Get that job at Grab](https://medium.com/@steve.yegge/get-that-job-at-grab-eea6de1d8421)
-
 - Official [repository](https://github.com/careercup/CtCI-6th-Edition) for solution to the [Cracking the Coding Interview (6th edition)](http://www.amazon.com/Cracking-Coding-Interview-6th-Edition/dp/0984782850)
 - Tay Yang Shun's [repository](https://github.com/yangshun/tech-interview-handbook) about technical interview handbook
 - Kevin Naughton Jr's personal [guide](https://github.com/kdn251/interviews) about technical interview
