@@ -19,7 +19,7 @@ In this guide, we introduce some knowledge about MySQL database engine. Some kno
 	- Searches on secondary index will eventually result in a search on the primary key index.
 - InnoDB adds the following columns implicitly to every table:
 	- `DB_TRX_ID`: the ID of the transaction which last modified this record;
-	- `DB_ROLL_PTR`: a pointer to the previous version of this record, which would be useful during rollback;
+	- `DB_ROLL_PTR`: a pointer to the previous version of this record _(which may be stored in undo log)_, which would be useful during rollback;
 	- `DB_ROW_ID`: an auto-increment ID which could serve as the primary key if there is no explicit one;
 	- `DELETED_BIT`: a flag for soft-delete of this record, while actual removal would be done by a purge worker asynchronously.
 
