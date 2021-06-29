@@ -34,6 +34,7 @@ In this guide, we introduce some knowledge about MySQL database engine. Some kno
 ![Isolation Levels](../img/sql_isolation.png)
 
 - In general, there are 2 ways to achieve isolation: lock-based concurrency control and multi-version concurrency control.
+	- Most modern database engines such as InnoDB adopt MVCC due to its better performance.
 
 ## MySQL High Performance & High Availability
 
