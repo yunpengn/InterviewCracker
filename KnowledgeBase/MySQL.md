@@ -14,9 +14,14 @@ In this guide, we introduce some knowledge about MySQL database engine. Some kno
 	- Thus, if you run `SELECT COUNT(*) FROM my_tbl`, the query will be much faster on MyISAM.
 - InnoDB supports disaster recovery much better than MyISAM.
 - InnoDB requies every table to have a primary key. This is because InnoDB is an index-organized storage engine (i.e., it always uses clustered index). InnoDB indeed stores the actual data in the leaf nodes of a B+ tree index for the primary key.
-    - Thus, it is wise to keep the size of the primary key small.
-    - If not supplied, an implicit primary key (i.e., a counter of 6 bytes) will be created.
-    - Searches on secondary index will eventually result in a search on the primary key index.
+	- Thus, it is wise to keep the size of the primary key small.
+	- If not supplied, an implicit primary key (i.e., a counter of 6 bytes) will be created.
+	- Searches on secondary index will eventually result in a search on the primary key index.
+- InnoDB adds the following columns implicitly to every table:
+	- `DB_TRX_ID`: the ID of the transaction which last modified this record;
+	- `DB_ROLL_PTR`: a pointer to the previous version of this record, which would be useful during rollback;
+	- `DB_ROW_ID`: an auto-increment ID which could serve as the primary key if there is no explicit one;
+	- `DELETED_BIT`: a flag for soft-delete of this record, while actual removal would be done by a purge worker asynchronously.
 
 ## MySQL character set
 
