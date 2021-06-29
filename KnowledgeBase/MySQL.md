@@ -35,6 +35,7 @@ In this guide, we introduce some knowledge about MySQL database engine. Some kno
 - To ensure the atomicity and durability of a sequence of SQL statements, they have to be wrapped into an SQL transaction.
 	- However, code without transaction would in general lead to better concurrency performance. We can avoid the use of transaction by careful design.
 - According to ANSI SQL standard, there are 4 isolation levels:
+	- InnoDB by default uses the _Repeatable Read_ isolation level.
 
 ![Isolation Levels](../img/sql_isolation.png)
 
