@@ -64,6 +64,9 @@ _Below, let's say the entered URL is `https://drive.google.com/`._
     - UDP is more efficient, thus it is used for DNS, real time media, etc.
 - How TCP can guarantee reliable transmission:
     - Sequence number, checksum, duplicate detection, flow control, congestion control, ARQ (auto repeat request), timeout (redeliver).
+- Differences between flow control and congestion control:
+    - Flow control is to coordinate the speed of the sender and receiver (e.g. receiver is slower than sender and its cache got overflowed). Thus, it is at the end-to-end level within a connection itself, using stop-and-wait and/or sliding window (go back N or selective repeat).
+    - Congestion control is to facilitate the entire network globally.
 
 ## Differences between HTTP short and long connection
 
