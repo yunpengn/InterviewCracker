@@ -74,6 +74,7 @@ _Below, let's say the entered URL is `https://drive.google.com/`._
 - In HTTP 1.0, short connection is used by default.
 - In HTTP 1.1, however, long connection is used by specifying `Connection: keep-alive` in the header.
     - Different from web socket, long connection only eliminates the need for opening/closing TCP connection. The basic HTTP request/response model is still followed per communication.
+    - HTTP 1.1 also supports range requests and partial responses for download managers.
 - WebSocket creates a persistent, full-duplex connection. This allows the server to push data to the client at any time.
     - WebSocket is not part of the HTTP standard. It is a different protocol.
     - HTTP 2.0 also supports server push. However, this is a bit different from WebSocket as it does not expose APIs to developers.
@@ -92,6 +93,12 @@ _Below, let's say the entered URL is `https://drive.google.com/`._
 
 - By default, HTTP is on port 80, while HTTPS is on port 443.
 - Although HTTP and HTTPS both run on top of TCP, HTTPS is more secured with the help of TLS/SSL.
+    - TLS is the successor of SSL protocol.
+- HTTPS guarantees all aspects of a secured communication together:
+    - Encryption: all HTTP messages are encrypted with AES (symmetric encryption);
+        - Before actual communcation begins, a key exchange process is performed with RSA (asymmetric encryption).
+    - Authenticatity: the identity of the server is verified using its X.509 certificate.
+    - Integrity: append every HTTP message with a cryptographical hash checksum.
 
 ## Differences between a few HTTP status code
 
