@@ -19,6 +19,7 @@ When a network I/O happens, there are usually 2 phases: a) waiting for data to b
 - **Blocking I/O:** the process is blocked for 2 phases, and will only resume after both complete.
 - **Non-blocking I/O:** the process uses long polling method to keep asking the kernel whether the data is ready. If the kernel returns error (meaning not ready), the process can do something else and ask again later.
 - **Multiplexing I/O (event-driven I/O):** use `select/epoll`, able to handle multiple connections concurrently.
+    - Internally, `select` uses polling while `epoll` uses callback.
 - **Signal-driven I/O:** the kernel uses a signal to notify when phase a is ready, and the process will be blocked for phase b.
 - **Asynchronous I/O:** similar to non-blocking I/O, but process does not have to keep asking the kernel. After the initial polling, the kernel will return the process a signal when data is ready.
 
@@ -102,3 +103,8 @@ _Below, let's say the entered URL is `https://drive.google.com/`._
 - Differences between 401 and 403:
     - 401 stands for `Unauthorized`, although it actually means _not authenticated yet_. The client did not authenticate itself to show the identity to the server yet.
     - 403 stands for `Forbidden`. Different from 401, the client does not have access rights to the requested resources even though its identity is already shown to the server.
+
+## Differences between IPv4 and IPv6
+
+- IPv4 has 2^32 - 1 possible addresses, while IPv6 has 2^128 - 1 possible addresses.
+- IPv6 plans to become hierarchical and use some convention similar to CIDR.
