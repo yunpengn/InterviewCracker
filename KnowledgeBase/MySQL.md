@@ -23,7 +23,16 @@ In this guide, we introduce some knowledge about MySQL database engine. Some kno
 	- `DB_ROW_ID`: an auto-increment ID which could serve as the primary key if there is no explicit one;
 	- `DELETED_BIT`: a flag for soft-delete of this record, while actual removal would be done by a purge worker asynchronously.
 
-## MySQL character set
+## MySQL Index
+
+- Differences between binary tree and B tree:
+	- B tree is a an n-ary tree, meaning each node could have up to n children rather than 2 children only. This is due to the nature of hard disk where data are stored in per block manner.
+- Differences between B tree and B+ tree:
+	- B+ tree only stores actual data in leaf nodes, not internal nodes. This makes each internal node able to contain references to more child nodes.
+	- B+ tree maintains a linked list at the leaf level, so that each leaf node contains a pointer to the next leaf node. This is useful for range queries.
+- 
+
+## MySQL Character Set
 
 - In production, always use `utf8mb4` as the character set for all tables.
 	- Starting from MySQL 8.0, `utf8mb4` is the default character set.
