@@ -49,6 +49,10 @@ In this guide, we introduce some knowledge about MySQL database engine. Some kno
 - To ensure the atomicity and durability of a sequence of SQL statements, they have to be wrapped into an SQL transaction.
 	- However, code without transaction would in general lead to better concurrency performance. We can avoid the use of transaction by careful design.
 	- Each singlular statement in InnoDB is wrapped inside a transaction, to make it atomic in an intuitive way.
+- There are 3 typical issues which is related to isolation:
+	- Dirty read: a query could read non-committed change, which is dangerous since the change could be rolled back later.
+	- Non-repeatable read: two queries within the same transaction read different values of the same record.
+	- Phantom read: a query could not see the update brought by a previous query in the same transaction because some other transaction has modified it.
 - According to ANSI SQL standard, there are 4 isolation levels:
 	- InnoDB by default uses the _Repeatable Read_ isolation level.
 
