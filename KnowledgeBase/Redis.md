@@ -23,6 +23,7 @@ In this guide, we introduce some knowledge about Redis.
 - For a memory-based cache such as Redis, CPU is usually not the bottleneck. Redis is usually memory or network bound.
 - Using single-threaded avoids the resources wasted on context switch, or the time waiting for lock, etc.
 - To utilize multiple CPUs, the official recommendation is to start multiple Redis instances on the same machine.
+- However, Redis became multi-threaded since its 6.0 version (I/O threading feature to avoid network blocking). 
 
 ## Differences between Redis and Memcached
 
@@ -30,14 +31,14 @@ In this guide, we introduce some knowledge about Redis.
 - Redis supports data persistence using RDB or AOF.
 - Starting from Redis 3.0, Redis natively supports cluster mode.
 - Redis is single-threaded, while Memcached is not.
-- As of 2019, Redis should almost always be better than Memcached. The only possible reason for choosing Memcached is its simplicity.
+- Redis should almost always be better than Memcached. The only possible reason for choosing Memcached is its simplicity.
 
 ## Differences between Redis and etcd
 
 - Redis and etcd are both distributed key-value store.
 - However, Redis is an in-memory cache, while data in etcd can only be persisted in hard disk.
 	- Thus, etcd does not provide fast querying. etcd should not be used as the primary data store or cache.
-- As of 2019, the only correct usage of etcd is for configuration management and service discovery.
+- The only correct usage of etcd is for configuration management and service discovery.
 	- etcd is originally designed to save configurations for Kubernetes.
 
 ## Redis Persistence - RDB vs AOF
