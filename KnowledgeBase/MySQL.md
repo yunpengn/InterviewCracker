@@ -30,7 +30,12 @@ In this guide, we introduce some knowledge about MySQL database engine. Some kno
 - Differences between B tree and B+ tree:
 	- B+ tree only stores actual data in leaf nodes, not internal nodes. This makes each internal node able to contain references to more child nodes.
 	- B+ tree maintains a linked list at the leaf level, so that each leaf node contains a pointer to the next leaf node. This is useful for range queries.
-- 
+- Differences between clustered index and non-clustered index:
+	- At leaf node level, clustered index stores data within the leaf nodes while non-clusterd index stores a pointer to the data within leaf nodes.
+	- In InnoDB, primary key is alway a clustered index while other keys would always be non-clustered index.
+- Differences between singular index and composite index:
+	- There are 3 solutions to use B+ tree to represent composite index: 1) store hash table at each leaf node; 2) store inner B+ tree at each leaf node; 3) concatenate all columns together and use it as the key for B+ tree.
+	- For composite index, the left-most prefix matching principle works when deciding whether a query is covered by an index.
 
 ## MySQL Character Set
 
