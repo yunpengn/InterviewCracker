@@ -11,8 +11,12 @@ In this guide, we introduce some knowledge about Redis.
     - String: similar to keys, cannot be larger than 512MB.
     - List: implemented as linked list.
     - Hash: a hash map from string to string, can store at most 2^32 entries.
+    	- A hash could be implemented using a ziplist (when the size is relatively small) or a hash table.
     - Set: a hash set of strings, can store at most 2^32 members.
-    - ZSet: a sorted set with the order defined by a floating-point number `score`, implemented by a skip list + hash set, can store at most 2^32 members.
+    	- A set could be implemented using an inset (when the size is relatively small) or a hash set.
+    - ZSet: a sorted set with the order defined by a floating-point number `score`, can store at most 2^32 members.
+    	- When the ZSet is relatively small (as defined by `zset-max-ziplist-entries` and `zset-max-ziplist-value`), it would be implemented using a ziplist (a compact-form linked list).
+    	- Otherwise, the ZSet would be implemented using a skip list.
 
 ## Why is Redis single-threaded?
 
