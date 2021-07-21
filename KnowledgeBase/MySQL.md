@@ -64,7 +64,7 @@ In this guide, we introduce some knowledge about MySQL database engine. Some kno
 	- Use shard to partition the database;
 	- Avoid the use of lock and transaction.
 - To ensure the high availablity of MySQL servers, we have to:
-	- Set up a slave for every production MySQL server and the slave must be a different geographic location;
+	- Set up a slave for every production MySQL server and the slave must be at a different geographic location;
 	- Perform daily snapshot-based backup from the slave.
 - MVCC (multi-version concurrency control) is useful for applications with high concurrency.
 	- It is different from the traditional lock-based concurrency control.
