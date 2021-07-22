@@ -28,7 +28,7 @@ In this guide, we introduce some knowledge about Go.
 ## Go Garbage Collector (GC)
 
 - The development of Go's GC is an ever evolving journey:
-    - Since Go 1.1: stop the world (STW)
+    - Since Go 1.1: stop the world (STW)， a.k.a. write barrier
     - Since Go 1.3: mark STW & sweep
     - Since Go 1.5: tri-coloring marking
     - Since Go 1.8: hybrid write barrier
