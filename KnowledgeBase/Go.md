@@ -14,6 +14,10 @@ In this guide, we introduce some knowledge about Go.
     - `select` is like the channel-based version of `switch`. It can be used to wait on multiple channels.
         - `select` can be used together with `time.After` to implement a timeout functionality with a fallback function.
     - However, if you need to wait for the completion of all `n` channels, you probably want to use a `WaitGroup` (i.e., implemented via a mutex).
+- Each processor has a `schedule` function that schedules goroutines from different queues:
+    - A global queue across all processors;
+    - Its local queue;
+    - The local queue from other processors.
 
 ## `defer` keyword
 
