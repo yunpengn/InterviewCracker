@@ -85,3 +85,8 @@ This brings the following benefits over the native string representation in C:
 
 - Short answer: in the event of partial failure, you need at least 3 master nodes to agree on majority.
 - Long answer: Redis Cluster uses `PING/PONG` to detect failures. When node `A` sends `PING` to node `B` but did not receive the response of `PONG`, `A` will believe `B` has gone offline. When majority (more than half) of the master nodes believe a certain node is offline, that node will be removed from the cluster (and its slave will be promoted). If there are only 2 master nodes and the link between them breaks, they will both believe the other goes offline (and everything becomes a mess).
+
+## How doees Redis Cluster work?
+
+- Unlike ZooKeeper or etcd, Redis Cluster does not need an extra centralized party to coordinate and maintain cluster information. Nodes inside a Redis Cluster uses the gossip protocol to monitor the health of each other.
+- Unlike other data stores which often use consistent hashing for data partitioning, Redis Cluster uses a unique hash slot approach which always divides the key space into 16384 slots. Then, the nodes only have ownership on some of the slots.
