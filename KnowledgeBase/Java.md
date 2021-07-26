@@ -90,6 +90,11 @@ In this guide, we introduce some knowledge about Java.
 - Different use cases of `synchronized`:
     - Lock for the whole class when using it on static methods.
     - Lock for the single instance otherwise.
+- Lock expansion process:
+    - No lock: initial state
+    - Bias lock: single-threaded competition
+    - Lightweight lock: multi-threaded competition, but only one thread can compete at any time
+    - Heavyweight lock: multi-threaded competition at the same time
 
 ## Spring
 
