@@ -57,6 +57,7 @@ In this guide, we introduce some knowledge about Java.
             - This is calculated by `oldCapacity + (oldCapacity >> 1)`. Java 7 uses bit operation to improve performance.
             - To copy old elements over to the new array, `Arrays.copyOf` is used.
 - Difference between `Hashtable`, `HashMap`, `ConcurrentHashMap`, `LinkedHashMap`, `TreeMap` and `IdentityHashMap`:
+    - The key for `HashMap` must implement both `equals()` and `hashcode()`.
     - `Hashtable` and `ConcurrentHashMap` is thread-safe, but `HashMap` is not.
         - However, `ConcurrentHashMap` would provide better performance under high concurrency.
     - `HashMap` is implemented as an array of `LinkedList`s (because of hash conflict):
