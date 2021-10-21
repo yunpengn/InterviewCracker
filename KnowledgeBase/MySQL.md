@@ -28,7 +28,7 @@ In this guide, we introduce some knowledge about MySQL database engine. Some kno
 - Differences between binary tree and B tree:
 	- B tree is a an n-ary tree, meaning each node could have up to n children rather than 2 children only. This is due to the nature of hard disk where data are stored in per block manner. Using the n-ary tree could reduce the height of the tree.
 - Differences between B tree and B+ tree:
-	- B+ tree only stores actual data in leaf nodes, not internal nodes. This makes each internal node able to contain references to more child nodes.
+	- B+ tree only stores actual data in leaf nodes, not internal nodes. This makes each internal node able to contain references to more child nodes. Thus, it further reduces the height of the tree.
 	- B+ tree maintains a linked list at the leaf level, so that each leaf node contains a pointer to the next leaf node. This is useful for range queries.
 - Differences between clustered index and non-clustered index:
 	- At leaf node level, clustered index stores data within the leaf nodes while non-clusterd index stores a pointer to the data within leaf nodes.
