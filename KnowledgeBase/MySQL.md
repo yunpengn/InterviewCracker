@@ -74,7 +74,9 @@ In this guide, we introduce some knowledge about MySQL database engine. Some kno
 	- It is different from the traditional lock-based concurrency control.
 	- The most classical use case for MVCC is the bank transfer problem.
 
-## Differences between MySQL binlog and transaction log
+## MySQL Logs
 
-- The binlog is a linear history of writes to the database, which can be used for replication purpose. For example, a slave instance will read binlog to follow its master.
-- Transaction log is used for rollback and disaster recovery. It is also known as redo log in the old Oracle days.
+- Primarily, MySQL uses 3 types of logging files to achieve ACID:
+    - The binlog is a linear history of writes to the database, which can be used for replication purpose. For example, a slave instance will read binlog to follow its master.
+    - Transaction log is used for rollback and disaster recovery. It is also known as redo log in the old Oracle days. It is basically a technique called WAL (write-ahead logging). When updating transaction log, InnoDB follows an approach of prepare + commit (which is essentially 2PC) to ensure consistency between binlog and transaction log.
+    -  Undo log stores the pre-image of each operation, in order to assist transaction rollback and MVCC.
