@@ -17,13 +17,18 @@ In this guide, we introduce some knowledge about Redis.
     - ZSet: a sorted set with the order defined by a floating-point number `score`, can store at most 2^32 members.
     	- When the ZSet is relatively small (as defined by `zset-max-ziplist-entries` and `zset-max-ziplist-value`), it would be implemented using a ziplist (a compact-form linked list).
     	- Otherwise, the ZSet would be implemented using a skip list.
+- Why Redis uses ziplist when the data structure is relatively small?
+    - Because ziplist is simple and consumes a smaller memory footprint.
 
 ## Why is Redis single-threaded?
 
 - For a memory-based cache such as Redis, CPU is usually not the bottleneck. Redis is usually memory or network bound.
 - Using single-threaded avoids the resources wasted on context switch, or the time waiting for lock, etc.
 - To utilize multiple CPUs, the official recommendation is to start multiple Redis instances on the same machine.
-- However, Redis became multi-threaded since its 6.0 version (I/O threading feature to avoid network blocking). 
+- However, Redis became multi-threaded since its 6.0 version (I/O threading feature to avoid network blocking).
+    - Before Redis 4.0, Redis is really single-threaded.
+    - Starting from Redis 4.0, Redis continues to be single-threaded for main operations. However, it starts to utilize other threads for big-key deletion, unused connection cleanup, etc.
+    - Starting from Redis 6.0, Redis becomes really multi-threaded to improve network I/O.
 
 ## Differences between Redis and Memcached
 
@@ -90,3 +95,9 @@ This brings the following benefits over the native string representation in C:
 
 - Unlike ZooKeeper or etcd, Redis Cluster does not need an extra centralized party to coordinate and maintain cluster information. Nodes inside a Redis Cluster uses the gossip protocol to monitor the health of each other.
 - Unlike other data stores which often use consistent hashing for data partitioning, Redis Cluster uses a unique hash slot approach which always divides the key space into 16384 slots. Then, the nodes only have ownership on some of the slots.
+
+## What does Redis do when the keys expire?
+
+- Redis utilizes a combination of the following two strategies:
+    - Lazy deletion: only execute `expireIfNeeded` function when there is an operation on this key and it has expired.
+    - Periodic deletion: perform a scan of the expiration hash-set every 10s, scan & `expireIfNeeded` for 20 keys in the hash-set randomly, repeat this process if more than 25% of the 20 keys are deleted.
