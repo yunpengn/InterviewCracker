@@ -100,4 +100,4 @@ This brings the following benefits over the native string representation in C:
 
 - Redis utilizes a combination of the following two strategies:
     - Lazy deletion: only execute `expireIfNeeded` function when there is an operation on this key and it has expired.
-    - Periodic deletion: perform a scan of the expiration hash-set every 10s, scan & `expireIfNeeded` for 20 keys in the hash-set randomly, repeat this process if more than 25% of the 20 keys are deleted.
+    - Periodic deletion: perform a scan of the expiration hash-map every 10s, scan & `expireIfNeeded` for 20 keys in the hash-map randomly, repeat this process if more than 25% of the 20 keys are deleted.
