@@ -80,3 +80,5 @@ In this guide, we introduce some knowledge about MySQL database engine. Some kno
     - The binlog is a linear history of writes to the database, which can be used for replication purpose. For example, a slave instance will read binlog to follow its master.
     - Transaction log is used for rollback and disaster recovery. It is also known as redo log in the old Oracle days. It is basically a technique called WAL (write-ahead logging). When updating transaction log, InnoDB follows an approach of prepare + commit (which is essentially 2PC) to ensure consistency between binlog and transaction log.
     -  Undo log stores the pre-image of each operation, in order to assist transaction rollback and MVCC.
+-  In addition, MySQL has the following types of logging files:
+    - Relay log is stored on the slave instance as a result of the replicationn of master instance's binlog, so that the master does not have to wait for the slave to finish execution.
